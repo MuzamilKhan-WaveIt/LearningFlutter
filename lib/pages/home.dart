@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning/widgets/MyDrawer.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,6 +15,9 @@ class _HomeState extends State<Home> {
         appBar: AppBar(
           title: Text("Home"),
         ),
-        body: Center(child: Text("Home")));
+        body: Center(
+          child: Text("Home"),
+        ),
+        drawer: MyDrawer());
   }
 }
