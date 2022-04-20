@@ -1,7 +1,7 @@
 class CategoryModel {
-  static final Items = [
+  static List<item> Items = [
     item(
-        id: "1",
+        id: 1,
         name: "Mouse",
         descr: "New Mouse",
         price: 300,
@@ -12,7 +12,7 @@ class CategoryModel {
 }
 
 class item {
-  final String id;
+  final int id;
   final String name;
   final String descr;
   final int price;
@@ -20,10 +20,29 @@ class item {
   final String image;
 
   item(
-      {this.id = "",
+      {this.id = 0,
       this.name = "",
       this.descr = "",
       this.price = 0,
       this.color = "",
       this.image = ""});
+
+  factory item.fromMap(Map<String, dynamic> map) {
+    return item(
+      id: map["id"],
+      name: map["name"],
+      descr: map["descr"],
+      price: map["price"],
+      color: map["color"],
+      image: map["image"],
+    );
+  }
+  toMap() => {
+        "id": id,
+        "name": name,
+        "descr": descr,
+        "price": price,
+        "color": color,
+        "image": image
+      };
 }

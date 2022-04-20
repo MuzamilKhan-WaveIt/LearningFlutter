@@ -4,7 +4,7 @@ import 'package:learning/models/items.dart';
 class ItemWidget extends StatelessWidget {
   final item item1;
   const ItemWidget({Key? key, required this.item1})
-      : assert(item != null),
+      : assert(item != null), 
         super(key: key);
 
   @override
